@@ -5,7 +5,7 @@ import lombok.Data;
 public class CoordinatesConverter {
 
     /**
-     * Coordinates
+     * Simple coordinates representation using latitude and longitude.
      */
     public record Coordinates(double latitude, double longitude) {
     }
@@ -18,6 +18,9 @@ public class CoordinatesConverter {
      * @see <a href=
      *      "https://en.wikipedia.org/wiki/Geographic_coordinate_system">Geographic
      *      coordinate system</a>
+     * @see Coordinates
+     * @param coordinates
+     * @return
      */
     public static Coordinates strToDouble(final String coordinates) {
         String[] coordsStr = coordinates.split(" ");
@@ -36,5 +39,31 @@ public class CoordinatesConverter {
             }
         }
         return new Coordinates(coords[0], coords[1]);
+    }
+
+    /**
+     * Converts coordinates from a Coordinates object to the format:
+     * XXXºXXX'XXX"<N/S> XXXºXXX'XXX"<W/E>
+     * For example: 23º32'12"N 46º45'12"W
+     * 
+     * @see Coordinates
+     * @param coordinates
+     * @return
+     */
+    public static String doubleToStr(final Coordinates coordinates) {
+        StringBuilder sb = new StringBuilder();
+        double lat = coordinates.latitude();
+        double lon = coordinates.longitude();
+        if (lat < 0) {
+            sb.append(-lat).append("S ");
+        } else {
+            sb.append(lat).append("N ");
+        }
+        if (lon < 0) {
+            sb.append(-lon).append("W");
+        } else {
+            sb.append(lon).append("E");
+        }
+        return sb.toString();
     }
 }
