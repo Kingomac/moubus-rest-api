@@ -5,7 +5,16 @@ meta {
 }
 
 post {
-  url: http://localhost:8080/busStops
-  body: none
+  url: http://localhost:8080/api/busStops
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "street": "Av. de Madrid",
+    "city": "Vigo",
+    "province": "Pontevedra",
+    "coordinates": "23º32'12\"N 46º45'12\"W"
+  }
 }
