@@ -1,11 +1,11 @@
 meta {
-  name: Create Bus Stop Vigo
+  name: Update bus stop with helper
   type: http
-  seq: 1
+  seq: 4
 }
 
-post {
-  url: http://localhost:8080/api/busStops
+put {
+  url: http://localhost:8080/api/helper/busStops/1
   body: json
   auth: none
 }
@@ -15,6 +15,6 @@ body:json {
     "street": "Av. de Madrid",
     "city": "Vigo",
     "province": "Pontevedra",
-    "coordinates": "23º32'12\"N 46º45'12\"W"
+    "coordinates": "23º32'12.324\"N 46°45'12.4\"W"
   }
 }

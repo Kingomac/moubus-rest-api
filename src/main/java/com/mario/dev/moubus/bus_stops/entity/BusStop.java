@@ -16,7 +16,7 @@ public class BusStop {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     private String street;
     private String city;

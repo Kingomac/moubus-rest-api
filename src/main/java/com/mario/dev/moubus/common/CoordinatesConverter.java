@@ -30,7 +30,7 @@ public class CoordinatesConverter {
         double[] coords = new double[2];
         for (int i = 0; i < 2; i++) {
             char lastChar = coordsStr[i].charAt(coordsStr[i].length() - 1);
-            String[] degreesMinutesSeconds = coordsStr[i].substring(0, coordsStr[i].length() - 1).split("º|'|\"");
+            String[] degreesMinutesSeconds = coordsStr[i].substring(0, coordsStr[i].length() - 1).split("º|°|'|\"");
             coords[i] = Double.parseDouble(degreesMinutesSeconds[0])
                     + Double.parseDouble(degreesMinutesSeconds[1]) / 60
                     + Double.parseDouble(degreesMinutesSeconds[2]) / 3600;

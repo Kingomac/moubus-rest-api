@@ -1,0 +1,21 @@
+meta {
+  name: Update bus stop
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:8080/api/busStops/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "street": "Av. de Madrid",
+    "city": "Vigo",
+    "province": "aaaaa",
+    "latitude": 23.53666666666667,
+    "longitude": -46.75333333333333
+  }
+}
