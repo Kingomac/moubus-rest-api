@@ -1,5 +1,5 @@
 meta {
-  name: Get all drivers
+  name: Create traveler Moubus
   type: http
   seq: 2
 }
@@ -7,22 +7,17 @@ meta {
 post {
   url: http://localhost:8080/api/travelersMoubus
   body: json
-  auth: basic
-}
-
-auth:basic {
-  username: user
-  password: password
+  auth: none
 }
 
 body:json {
   {
-    "name": "taylor",
     "dni": 223455678,
+    "name": "taylor",
     "surnames": "swift",
     "email": "swift@switf.com",
     "phone": "21453423245",
     "wantsPromotions": true,
-    "moubusCardNumber": "ohadshdaislhdkaw"
+    "monbusCardNumber": "81267284352854234"
   }
 }

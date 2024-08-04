@@ -1,0 +1,27 @@
+meta {
+  name: Update traveler Moubus
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:8080/api/travelersMoubus/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "dni": 3424324,
+    "name": "taylor",
+    "surnames": "swift",
+    "email": "swift@switf.com",
+    "phone": "21453423245",
+    "wantsPromotions": true,
+    "monbusCardNumber": "891263961328"
+  }
+}
+
+vars:pre-request {
+  : 
+}

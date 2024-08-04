@@ -1,0 +1,23 @@
+meta {
+  name: Update traveler Xunta
+  type: http
+  seq: 5
+}
+
+put {
+  url: http://localhost:8080/api/travelersXunta/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "dni": 223455678,
+    "name": "taylor",
+    "surnames": "swift",
+    "email": "swift@switf.com",
+    "phone": "21453423245",
+    "wantsPromotions": true,
+    "xuntaCardNumber": "723868342587"
+  }
+}
